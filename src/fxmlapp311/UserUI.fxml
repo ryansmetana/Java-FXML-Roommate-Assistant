@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="@MyRoommateAssistant.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxmlapp311.UserUICntl">
+   <children>
+      <TableView id="userTable" fx:id="userTable" layoutY="252.0" prefHeight="154.0" prefWidth="600.0" stylesheets="@MyRoommateAssistant.css">
+        <columns>
+          <TableColumn id="lastNameColumn" fx:id="lastNameColumn" prefWidth="125.0" styleClass="columnHeader" text="Last Name" />
+          <TableColumn id="firstNameColumn" fx:id="firstNameColumn" prefWidth="125.0" styleClass="columnHeader" text="First Name" />
+          <TableColumn id="usernameColumn" fx:id="usernameColumn" prefWidth="125.0" styleClass="columnHeader" text="Username" />
+            <TableColumn fx:id="waterColumn" prefWidth="110.0" styleClass="columnHeader" text="Water Consumed" />
+            <TableColumn fx:id="electricColumn" prefWidth="110.0" styleClass="columnHeader" text="Electric Consumed" />
+        </columns>
+      </TableView>
+      <Button fx:id="addUserButton" layoutX="395.0" layoutY="104.0" mnemonicParsing="false" onAction="#showCreatePane" prefHeight="45.0" prefWidth="175.0" text="Add User" />
+      <Label layoutX="150.0" layoutY="10.0" text="My Roommate Assistant">
+         <font>
+            <Font name="Autumn Regular" size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="editUserButton" layoutX="29.0" layoutY="104.0" mnemonicParsing="false" onAction="#editRow" prefHeight="45.0" prefWidth="175.0" text="Edit User" />
+      <Button fx:id="btnBack" layoutX="6.0" layoutY="7.0" mnemonicParsing="false" onAction="#back" prefHeight="45.0" prefWidth="100.0" text="Back" />
+      <Button layoutX="491.0" layoutY="7.0" mnemonicParsing="false" onAction="#openHelp" prefHeight="45.0" prefWidth="100.0" text="Help" />
+      <Button fx:id="deleteUserButton" layoutX="212.0" layoutY="104.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="45.0" prefWidth="175.0" text="Delete User" />
+      <Label layoutX="498.0" layoutY="236.0" text="(Hours this week)">
+         <font>
+            <Font name="Autumn Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="387.0" layoutY="236.0" text="(Hours this week)">
+         <font>
+            <Font name="Autumn Regular" size="12.0" />
+         </font>
+      </Label>
+      <Button layoutX="212.0" layoutY="168.0" mnemonicParsing="false" onAction="#updateUtilitiesButton" prefHeight="45.0" prefWidth="175.0" text="Update Utility Usage" />
+      <Label layoutX="273.0" layoutY="41.0" text="-Users-" textFill="WHITE">
+         <font>
+            <Font name="Autumn Regular" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="CreatePane" layoutX="124.0" layoutY="30.0" prefHeight="367.0" prefWidth="374.0" style="-fx-border-color: black; -fx-border-width: 3;" styleClass="root" visible="false">
+         <children>
+            <Label layoutX="83.0" layoutY="14.0" text="Add A Roommate">
+               <font>
+                  <Font name="Arial Black" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="131.0" text="Roommate's Last Name:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAdd" layoutX="99.0" layoutY="297.0" mnemonicParsing="false" onAction="#addUser" prefHeight="45.0" prefWidth="175.0" text="ADD" />
+            <Label layoutX="43.0" layoutY="62.0" text="Roommates First Name:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtFirstName" layoutX="43.0" layoutY="84.0" prefHeight="32.0" prefWidth="264.0" />
+            <TextField fx:id="txtLastName" layoutX="40.0" layoutY="153.0" prefHeight="32.0" prefWidth="264.0" />
+            <Label layoutX="40.0" layoutY="211.0" text="Roommate's Username:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUsername" layoutX="40.0" layoutY="233.0" prefHeight="32.0" prefWidth="264.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="updatePane" layoutX="134.0" layoutY="40.0" prefHeight="367.0" prefWidth="374.0" style="-fx-border-color: black; -fx-border-width: 3;" styleClass="root" visible="false">
+         <children>
+            <Label layoutX="92.0" layoutY="14.0" text="Update Utilities">
+               <font>
+                  <Font name="Arial Black" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="43.0" layoutY="131.0" text="Water Consumed This Week (Hours):">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAdd1" layoutX="99.0" layoutY="297.0" mnemonicParsing="false" onAction="#changeUtilities" prefHeight="45.0" prefWidth="175.0" text="Update" />
+            <Label layoutX="43.0" layoutY="62.0" text="Roommates Username:">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtUsernameUtil" layoutX="43.0" layoutY="84.0" prefHeight="32.0" prefWidth="264.0" />
+            <TextField fx:id="txtWaterConsumed" layoutX="40.0" layoutY="153.0" prefHeight="32.0" prefWidth="264.0" />
+            <TextField fx:id="txtElectricConsumed" layoutX="40.0" layoutY="233.0" prefHeight="32.0" prefWidth="264.0" />
+            <Label layoutX="40.0" layoutY="203.0" text="Electric Consumed This Week (Hours):">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
